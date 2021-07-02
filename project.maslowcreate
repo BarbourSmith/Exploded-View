@@ -8,17 +8,258 @@
     "topLevel": true,
     "allAtoms": [
         {
+            "atomType": "Circle",
+            "name": "Circle",
+            "x": 0.08538899430740038,
+            "y": 0.3129770992366412,
+            "uniqueID": 620152,
+            "ioValues": [
+                {
+                    "name": "diameter",
+                    "ioValue": 10
+                }
+            ]
+        },
+        {
+            "atomType": "Extrude",
+            "name": "Extrude",
+            "x": 0.22580645161290322,
+            "y": 0.3015267175572519,
+            "uniqueID": 567908,
+            "ioValues": [
+                {
+                    "name": "geometry",
+                    "ioValue": "atoms/418200/620152Circle"
+                },
+                {
+                    "name": "height",
+                    "ioValue": 10
+                }
+            ]
+        },
+        {
+            "atomType": "Color",
+            "name": "Color",
+            "x": 0.38235294117647056,
+            "y": 0.27862595419847325,
+            "uniqueID": 238077,
+            "ioValues": [
+                {
+                    "name": "geometry",
+                    "ioValue": "atoms/418200/567908Extrude"
+                }
+            ],
+            "selectedColorIndex": 0
+        },
+        {
+            "atomType": "Add-BOM-Tag",
+            "name": "Add BOM Tag",
+            "x": 0.5569259962049335,
+            "y": 0.36259541984732824,
+            "uniqueID": 397493,
+            "ioValues": [
+                {
+                    "name": "geometry",
+                    "ioValue": "atoms/418200/238077Color"
+                }
+            ],
+            "BOMitem": {
+                "BOMitemName": "name",
+                "numberNeeded": 1,
+                "costUSD": 0,
+                "source": "www.example.com",
+                "totalNeeded": 1,
+                "radius": 0.015384615384615385
+            }
+        },
+        {
+            "atomType": "Rectangle",
+            "name": "Rectangle",
+            "x": 0.06261859582542695,
+            "y": 0.6908396946564885,
+            "uniqueID": 671647,
+            "ioValues": [
+                {
+                    "name": "x length",
+                    "ioValue": 20
+                },
+                {
+                    "name": "y length",
+                    "ioValue": 20
+                }
+            ]
+        },
+        {
+            "atomType": "Extrude",
+            "name": "Extrude",
+            "x": 0.2058823529411765,
+            "y": 0.6908396946564885,
+            "uniqueID": 922954,
+            "ioValues": [
+                {
+                    "name": "geometry",
+                    "ioValue": "atoms/418200/671647Rectangle"
+                },
+                {
+                    "name": "height",
+                    "ioValue": 4
+                }
+            ]
+        },
+        {
+            "atomType": "Color",
+            "name": "Color",
+            "x": 0.3956356736242885,
+            "y": 0.6946564885496184,
+            "uniqueID": 772378,
+            "ioValues": [
+                {
+                    "name": "geometry",
+                    "ioValue": "atoms/418200/922954Extrude"
+                }
+            ],
+            "selectedColorIndex": "10"
+        },
+        {
+            "atomType": "Assembly",
+            "name": "Assembly",
+            "x": 0.6641366223908918,
+            "y": 0.4541984732824427,
+            "uniqueID": 378938,
+            "ioValues": [
+                {
+                    "name": "3D shape 1",
+                    "ioValue": 10
+                },
+                {
+                    "name": "3D shape 2",
+                    "ioValue": 10
+                }
+            ]
+        },
+        {
+            "atomType": "Add-BOM-Tag",
+            "name": "Add BOM Tag",
+            "x": 0.5664136622390892,
+            "y": 0.7061068702290076,
+            "uniqueID": 124409,
+            "ioValues": [
+                {
+                    "name": "geometry",
+                    "ioValue": "atoms/418200/772378Color"
+                }
+            ],
+            "BOMitem": {
+                "BOMitemName": "name",
+                "numberNeeded": 1,
+                "costUSD": 0,
+                "source": "www.example.com",
+                "totalNeeded": 1,
+                "radius": 0.015384615384615385
+            }
+        },
+        {
+            "atomType": "Code",
+            "name": "Code",
+            "x": 0.7893738140417457,
+            "y": 0.5916030534351144,
+            "uniqueID": 194839,
+            "ioValues": [
+                {
+                    "name": "Input1",
+                    "ioValue": "atoms/418200/378938Assembly"
+                }
+            ],
+            "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n\n\nfunction main(Input1){\n  console.log(Input1.tags());\n  return Arc(40)        //return must be geometry;\n}\n\nreturn main(Input1)"
+        },
+        {
             "atomType": "Output",
             "name": "Output",
             "x": 0.9810246679316889,
             "y": 0.5,
             "uniqueID": 151595,
-            "ioValues": []
+            "ioValues": [
+                {
+                    "name": "number or geometry",
+                    "ioValue": "atoms/418200/194839Code"
+                }
+            ]
         }
     ],
-    "allConnectors": [],
+    "allConnectors": [
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": true,
+            "ap1ID": 620152,
+            "ap2ID": 567908
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": true,
+            "ap1ID": 567908,
+            "ap2ID": 238077
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": true,
+            "ap1ID": 238077,
+            "ap2ID": 397493
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "3D shape 2",
+            "ap2Primary": false,
+            "ap1ID": 397493,
+            "ap2ID": 378938
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": true,
+            "ap1ID": 671647,
+            "ap2ID": 922954
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": true,
+            "ap1ID": 922954,
+            "ap2ID": 772378
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": true,
+            "ap1ID": 772378,
+            "ap2ID": 124409
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "Input1",
+            "ap2Primary": false,
+            "ap1ID": 378938,
+            "ap2ID": 194839
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "3D shape 1",
+            "ap2Primary": false,
+            "ap1ID": 124409,
+            "ap2ID": 378938
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "number or geometry",
+            "ap2Primary": false,
+            "ap1ID": 194839,
+            "ap2ID": 151595
+        }
+    ],
     "fileTypeVersion": 1,
     "simplify": false,
     "filetypeVersion": 1,
-    "circleSegmentSize": 2
+    "circleSegmentSize": "0.051"
 }
