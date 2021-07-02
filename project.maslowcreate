@@ -40,8 +40,8 @@
         {
             "atomType": "Color",
             "name": "Color",
-            "x": 0.38235294117647056,
-            "y": 0.27862595419847325,
+            "x": 0.34629981024667933,
+            "y": 0.21374045801526717,
             "uniqueID": 238077,
             "ioValues": [
                 {
@@ -54,8 +54,8 @@
         {
             "atomType": "Add-BOM-Tag",
             "name": "Add BOM Tag",
-            "x": 0.5569259962049335,
-            "y": 0.36259541984732824,
+            "x": 0.4421252371916508,
+            "y": 0.20229007633587787,
             "uniqueID": 397493,
             "ioValues": [
                 {
@@ -71,6 +71,31 @@
                 "totalNeeded": 1,
                 "radius": 0.015384615384615385
             }
+        },
+        {
+            "atomType": "Translate",
+            "name": "Translate",
+            "x": 0.5559772296015181,
+            "y": 0.31679389312977096,
+            "uniqueID": 661812,
+            "ioValues": [
+                {
+                    "name": "geometry",
+                    "ioValue": "atoms/418200/397493Add-BOM-Tag"
+                },
+                {
+                    "name": "xDist",
+                    "ioValue": 0
+                },
+                {
+                    "name": "yDist",
+                    "ioValue": 4
+                },
+                {
+                    "name": "zDist",
+                    "ioValue": 0
+                }
+            ]
         },
         {
             "atomType": "Rectangle",
@@ -107,20 +132,6 @@
             ]
         },
         {
-            "atomType": "Color",
-            "name": "Color",
-            "x": 0.3956356736242885,
-            "y": 0.6946564885496184,
-            "uniqueID": 772378,
-            "ioValues": [
-                {
-                    "name": "geometry",
-                    "ioValue": "atoms/418200/922954Extrude"
-                }
-            ],
-            "selectedColorIndex": "10"
-        },
-        {
             "atomType": "Assembly",
             "name": "Assembly",
             "x": 0.6641366223908918,
@@ -132,10 +143,24 @@
                     "ioValue": 10
                 },
                 {
-                    "name": "3D shape 2",
+                    "name": "3D shape 3",
                     "ioValue": 10
                 }
             ]
+        },
+        {
+            "atomType": "Color",
+            "name": "Color",
+            "x": 0.3320683111954459,
+            "y": 0.7595419847328244,
+            "uniqueID": 772378,
+            "ioValues": [
+                {
+                    "name": "geometry",
+                    "ioValue": "atoms/418200/922954Extrude"
+                }
+            ],
+            "selectedColorIndex": "10"
         },
         {
             "atomType": "Add-BOM-Tag",
@@ -170,7 +195,7 @@
                     "ioValue": "atoms/418200/378938Assembly"
                 }
             ],
-            "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n\n\nfunction main(Input1){\n  \n  var builtShape = [];\n  var totalCenter = Input1.size().center;\n  console.log(totalCenter);\n  \n  Input1.tags().forEach(tag => {\n    const subShape = Input1.keep(tag);\n    const subShapeCenter = subShape.size().center;\n    const moveTo = [totalCenter[0] - subShapeCenter[0], totalCenter[1] - subShapeCenter[1], totalCenter[2] - subShapeCenter[2]];\n    console.log(moveTo);\n    builtShape.push(subShape.move(moveTo[0], moveTo[1], moveTo[2]));\n    \n  })\n  return Group(...builtShape);        //return must be geometry;\n}\n\nreturn main(Input1)"
+            "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n\n\nfunction main(Input1){\n  \n  var builtShape = [Input1.void()];\n  var totalCenter = Input1.size().center;\n  \n  Input1.tags().forEach(tag => {\n    const subShape = Input1.keep(tag).noVoid();\n    const subShapeCenter = subShape.size().center;\n    const moveTo = [totalCenter[0] - subShapeCenter[0], totalCenter[1] - subShapeCenter[1], totalCenter[2] - subShapeCenter[2]];\n    builtShape.push(subShape.move(8*moveTo[0], 8*moveTo[1], 8*moveTo[2]));\n    \n  })\n  return Group(...builtShape);        //return must be geometry;\n}\n\nreturn main(Input1)"
         },
         {
             "atomType": "Output",
@@ -210,9 +235,16 @@
         },
         {
             "ap1Name": "geometry",
-            "ap2Name": "3D shape 2",
-            "ap2Primary": false,
+            "ap2Name": "geometry",
+            "ap2Primary": true,
             "ap1ID": 397493,
+            "ap2ID": 661812
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "3D shape 3",
+            "ap2Primary": false,
+            "ap1ID": 661812,
             "ap2ID": 378938
         },
         {
@@ -231,17 +263,17 @@
         },
         {
             "ap1Name": "geometry",
-            "ap2Name": "geometry",
-            "ap2Primary": true,
-            "ap1ID": 772378,
-            "ap2ID": 124409
-        },
-        {
-            "ap1Name": "geometry",
             "ap2Name": "Input1",
             "ap2Primary": false,
             "ap1ID": 378938,
             "ap2ID": 194839
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": true,
+            "ap1ID": 772378,
+            "ap2ID": 124409
         },
         {
             "ap1Name": "geometry",
