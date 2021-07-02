@@ -3,7 +3,6 @@
  |Part|Number Needed|Price|Source| 
  |----|----------|-----|-----|
 |Block|1|$0.00|www.example.com|
-|Bolt|1|$0.00|www.example.com|
-|Total: |2|$0.00| |
+|Total: |1|$0.00| |
 
  3xCOG MSRP: $0.00
