@@ -161,8 +161,8 @@
         {
             "atomType": "Code",
             "name": "Code",
-            "x": 0.7893738140417457,
-            "y": 0.5916030534351144,
+            "x": 0.7874762808349147,
+            "y": 0.6068702290076335,
             "uniqueID": 194839,
             "ioValues": [
                 {
@@ -170,7 +170,7 @@
                     "ioValue": "atoms/418200/378938Assembly"
                 }
             ],
-            "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n\n\nfunction main(Input1){\n  console.log(Input1.tags());\n  return Arc(40)        //return must be geometry;\n}\n\nreturn main(Input1)"
+            "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n\n\nfunction main(Input1){\n  console.log(Input1.tags());\n  console.log(Input1);\n  return Input1        //return must be geometry;\n}\n\nreturn main(Input1)"
         },
         {
             "atomType": "Output",
