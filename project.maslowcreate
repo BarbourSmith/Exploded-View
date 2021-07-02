@@ -8,59 +8,25 @@
     "topLevel": true,
     "allAtoms": [
         {
-            "atomType": "Circle",
-            "name": "Circle",
-            "x": 0.08538899430740038,
-            "y": 0.3129770992366412,
-            "uniqueID": 620152,
-            "ioValues": [
-                {
-                    "name": "diameter",
-                    "ioValue": 10
-                }
-            ]
-        },
-        {
-            "atomType": "Extrude",
-            "name": "Extrude",
-            "x": 0.22580645161290322,
-            "y": 0.3015267175572519,
-            "uniqueID": 567908,
-            "ioValues": [
-                {
-                    "name": "geometry",
-                    "ioValue": "atoms/418200/620152Circle"
-                },
-                {
-                    "name": "height",
-                    "ioValue": 10
-                }
-            ]
-        },
-        {
-            "atomType": "Color",
-            "name": "Color",
-            "x": 0.34629981024667933,
-            "y": 0.21374045801526717,
-            "uniqueID": 238077,
-            "ioValues": [
-                {
-                    "name": "geometry",
-                    "ioValue": "atoms/418200/567908Extrude"
-                }
-            ],
-            "selectedColorIndex": 0
+            "atomType": "GitHubMolecule",
+            "name": "M3x30 Bolt",
+            "x": 0.13757115749525617,
+            "y": 0.1984732824427481,
+            "uniqueID": 191913,
+            "projectID": "253144023",
+            "ioValues": [],
+            "simplify": false
         },
         {
             "atomType": "Add-BOM-Tag",
             "name": "Add BOM Tag",
-            "x": 0.4421252371916508,
-            "y": 0.20229007633587787,
+            "x": 0.3472485768500949,
+            "y": 0.17557251908396945,
             "uniqueID": 397493,
             "ioValues": [
                 {
                     "name": "geometry",
-                    "ioValue": "atoms/418200/238077Color"
+                    "ioValue": "atoms/418200/191913GitHubMolecule"
                 }
             ],
             "BOMitem": {
@@ -75,8 +41,8 @@
         {
             "atomType": "Translate",
             "name": "Translate",
-            "x": 0.5559772296015181,
-            "y": 0.31679389312977096,
+            "x": 0.4857685009487666,
+            "y": 0.22900763358778628,
             "uniqueID": 661812,
             "ioValues": [
                 {
@@ -85,7 +51,7 @@
                 },
                 {
                     "name": "xDist",
-                    "ioValue": 0
+                    "ioValue": 2
                 },
                 {
                     "name": "yDist",
@@ -93,7 +59,32 @@
                 },
                 {
                     "name": "zDist",
-                    "ioValue": 0
+                    "ioValue": 8
+                }
+            ]
+        },
+        {
+            "atomType": "Translate",
+            "name": "Translate",
+            "x": 0.4307400379506641,
+            "y": 0.4732824427480916,
+            "uniqueID": 165976,
+            "ioValues": [
+                {
+                    "name": "geometry",
+                    "ioValue": "atoms/418200/397493Add-BOM-Tag"
+                },
+                {
+                    "name": "xDist",
+                    "ioValue": 2
+                },
+                {
+                    "name": "yDist",
+                    "ioValue": -4
+                },
+                {
+                    "name": "zDist",
+                    "ioValue": 8
                 }
             ]
         },
@@ -144,6 +135,10 @@
                 },
                 {
                     "name": "3D shape 3",
+                    "ioValue": 10
+                },
+                {
+                    "name": "3D shape 4",
                     "ioValue": 10
                 }
             ]
@@ -213,24 +208,10 @@
     ],
     "allConnectors": [
         {
-            "ap1Name": "geometry",
+            "ap1Name": "Geometry",
             "ap2Name": "geometry",
             "ap2Primary": true,
-            "ap1ID": 620152,
-            "ap2ID": 567908
-        },
-        {
-            "ap1Name": "geometry",
-            "ap2Name": "geometry",
-            "ap2Primary": true,
-            "ap1ID": 567908,
-            "ap2ID": 238077
-        },
-        {
-            "ap1Name": "geometry",
-            "ap2Name": "geometry",
-            "ap2Primary": true,
-            "ap1ID": 238077,
+            "ap1ID": 191913,
             "ap2ID": 397493
         },
         {
@@ -242,9 +223,23 @@
         },
         {
             "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": true,
+            "ap1ID": 397493,
+            "ap2ID": 165976
+        },
+        {
+            "ap1Name": "geometry",
             "ap2Name": "3D shape 3",
             "ap2Primary": false,
             "ap1ID": 661812,
+            "ap2ID": 378938
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "3D shape 4",
+            "ap2Primary": false,
+            "ap1ID": 165976,
             "ap2ID": 378938
         },
         {
