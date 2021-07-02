@@ -64,7 +64,7 @@
                 }
             ],
             "BOMitem": {
-                "BOMitemName": "name",
+                "BOMitemName": "Bolt",
                 "numberNeeded": 1,
                 "costUSD": 0,
                 "source": "www.example.com",
@@ -150,7 +150,7 @@
                 }
             ],
             "BOMitem": {
-                "BOMitemName": "name",
+                "BOMitemName": "Block",
                 "numberNeeded": 1,
                 "costUSD": 0,
                 "source": "www.example.com",
