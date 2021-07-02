@@ -170,7 +170,7 @@
                     "ioValue": "atoms/418200/378938Assembly"
                 }
             ],
-            "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n\n\nfunction main(Input1){\n  console.log(Input1.tags());\n  console.log(Input1);\n  return Input1        //return must be geometry;\n}\n\nreturn main(Input1)"
+            "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n\n\nfunction main(Input1){\n  \n  var builtShape = [];\n  var totalCenter = Input1.size();\n  \n  Input1.tags().forEach(tag => {\n    console.log(Input1.keep(tag).size());\n  })\n  return Input1        //return must be geometry;\n}\n\nreturn main(Input1)"
         },
         {
             "atomType": "Output",
